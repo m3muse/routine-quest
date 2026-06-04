@@ -1,7 +1,8 @@
 {
     "name": "RoutineQuest",
     "short_name": "루틴퀘스트",
-    "start_url": "/",
+    "start_url": "/routine-quest/",
+    "scope": "/routine-quest/",
     "display": "standalone",
     "background_color": "#FFF7E2",
     "theme_color": "#6FB85F",
