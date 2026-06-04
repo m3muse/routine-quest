@@ -1,0 +1,36 @@
+{
+    "name": "RoutineQuest",
+    "short_name": "루틴퀘스트",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FFF7E2",
+    "theme_color": "#6FB85F",
+    "description": "매일 루틴을 완료하고 레벨업하는 RPG 스타일 할 일 앱",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "lang": "ko",
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
