@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 
 import '../l10n/strings.dart';
 import '../services/routine_service.dart';
@@ -63,6 +64,8 @@ class StatsScreen extends ConsumerWidget {
                   _WeeklyExpBar(weeklyExp: weeklyExp, weeklyMax: weeklyMax),
                   const SizedBox(height: 18),
                   _StatsTiles(svc: svc, date: date, level: user.level, exp: user.exp),
+                  const SizedBox(height: 12),
+                  _DayOfYearCard(loc: loc),
                 ],
               );
             },
@@ -347,6 +350,63 @@ class _StatsTiles extends ConsumerWidget {
       if (streak > 365) break;
     }
     return streak;
+  }
+}
+
+class _DayOfYearCard extends StatelessWidget {
+  const _DayOfYearCard({required this.loc});
+  final AppLocale loc;
+
+  @override
+  Widget build(BuildContext context) {
+    final now = DateTime.now();
+    final dayOfYear = now.difference(DateTime(now.year)).inDays + 1;
+    final yearDays = DateTime(now.year, 12, 31).difference(DateTime(now.year)).inDays + 1;
+    final progress = dayOfYear / yearDays;
+    final dateStr = DateFormat('yyyy. M. d', loc.intlLocale).format(now);
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.calendar_today, color: AppColors.primary, size: 18),
+                const SizedBox(width: 8),
+                Text(
+                  AppStrings.fmt(loc, 'today.dayOfYear', {'n': '$dayOfYear', 'total': '$yearDays'}),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                    fontSize: 14,
+                    color: AppColors.text,
+                  ),
+                ),
+                const Spacer(),
+                Text(
+                  dateStr,
+                  style: TextStyle(fontSize: 12, color: AppColors.subtle),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(6),
+              child: TweenAnimationBuilder<double>(
+                tween: Tween(begin: 0, end: progress),
+                duration: const Duration(milliseconds: 600),
+                builder: (c, v, _) => LinearProgressIndicator(
+                  value: v,
+                  minHeight: 8,
+                  backgroundColor: AppColors.primary.withValues(alpha: 0.15),
+                  valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 

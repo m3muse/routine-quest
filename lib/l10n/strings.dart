@@ -177,7 +177,7 @@ class AppStrings {
       'cat.misc': '기타',
 
       // Stats
-      'stats.sectionMountain': '이번 주의 산',
+      'stats.sectionMountain': '루틴 지도',
       'stats.sectionChart': '요일별 달성률',
       'stats.weeklyExpLabel': '주간 EXP',
       'stats.holidayMark': '휴',
@@ -320,7 +320,7 @@ class AppStrings {
       'cat.fitness': 'Fitness',
       'cat.misc': 'Misc',
 
-      'stats.sectionMountain': "This Week's Mountain",
+      'stats.sectionMountain': 'Routine Map',
       'stats.sectionChart': 'Daily Completion',
       'stats.weeklyExpLabel': 'Weekly EXP',
       'stats.holidayMark': 'Off',
