@@ -136,6 +136,7 @@ class _TodayScreenState extends ConsumerState<TodayScreen> {
   @override
   Widget build(BuildContext context) {
     ref.watch(dataRevisionProvider);
+    ref.watch(themeProvider);
     final user = ref.watch(authControllerProvider);
     final asyncSvc = ref.watch(routineServiceProvider);
     final date = ref.watch(selectedDateProvider);

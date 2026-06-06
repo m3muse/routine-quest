@@ -135,19 +135,19 @@ const Map<AppThemeId, ThemePalette> kPalettes = {
   // 4. Deep Sea — bold dark navy + bright cyan
   AppThemeId.deepSea: ThemePalette(
     background: Color(0xFF0F2854),
-    card: Color(0xFFBDE8F5),
+    card: Color(0xFF1C4D8D),       // mid navy — light text readable on this
     primary: Color(0xFF4988C4),
-    primaryDark: Color(0xFF0F2854),
+    primaryDark: Color(0xFF0A1A3C),
     primaryLight: Color(0xFFBDE8F5),
-    accent: Color(0xFFBDE8F5),
+    accent: Color(0xFF4988C4),     // mid blue — white text readable on this
     accentDeep: Color(0xFF1C4D8D),
     magic: Color(0xFF4988C4),
     magicDeep: Color(0xFF1C4D8D),
     success: Color(0xFF7AB5A3),
     danger: Color(0xFFE07A7A),
-    text: Color(0xFF0F2854),
-    textOnDark: Color(0xFFBDE8F5),
-    subtle: Color(0xFF6B89A8),
+    text: Color(0xFFCBE8FF),       // light blue-white — readable on both dark bg and card
+    textOnDark: Color(0xFFCBE8FF),
+    subtle: Color(0xFF7BA8C8),
     darkScaffold: true,
   ),
 

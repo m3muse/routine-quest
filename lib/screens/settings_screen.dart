@@ -324,6 +324,7 @@ class EnergyDetailScreen extends ConsumerWidget {
   const EnergyDetailScreen({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ref.watch(themeProvider);
     final user = ref.watch(authControllerProvider);
     final loc = ref.watch(localeProvider);
     String s(String key) => AppStrings.get(loc, key);

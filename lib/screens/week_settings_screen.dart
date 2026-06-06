@@ -53,6 +53,7 @@ class WeekSettingsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ref.watch(dataRevisionProvider);
+    ref.watch(themeProvider);
     final asyncSvc = ref.watch(routineServiceProvider);
     final loc = ref.watch(localeProvider);
     String s(String key) => AppStrings.get(loc, key);

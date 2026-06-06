@@ -34,6 +34,7 @@ class _HomeShellState extends ConsumerState<HomeShell> {
 
   @override
   Widget build(BuildContext context) {
+    ref.watch(themeProvider);
     final loc = ref.watch(localeProvider);
     String s(String key) => AppStrings.get(loc, key);
     final shellTitles = [s('shell.today'), s('shell.stats'), s('shell.week'), s('shell.settings')];

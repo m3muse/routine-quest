@@ -16,6 +16,7 @@ class StatsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ref.watch(dataRevisionProvider);
+    ref.watch(themeProvider);
     final user = ref.watch(authControllerProvider);
     final asyncSvc = ref.watch(routineServiceProvider);
     final date = ref.watch(selectedDateProvider);
