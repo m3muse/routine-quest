@@ -288,6 +288,7 @@ class _WeeklyExpBar extends ConsumerWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(6),
               child: TweenAnimationBuilder<double>(
+                key: ValueKey(AppColors.id),
                 tween: Tween(begin: 0, end: ratio),
                 duration: const Duration(milliseconds: 600),
                 builder: (c, v, _) => LinearProgressIndicator(
@@ -394,6 +395,7 @@ class _DayOfYearCard extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(6),
               child: TweenAnimationBuilder<double>(
+                key: ValueKey(AppColors.id),
                 tween: Tween(begin: 0, end: progress),
                 duration: const Duration(milliseconds: 600),
                 builder: (c, v, _) => LinearProgressIndicator(

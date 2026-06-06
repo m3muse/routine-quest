@@ -305,6 +305,7 @@ class _ProgressStrip extends StatelessWidget {
               child: SizedBox(
                 height: 10,
                 child: TweenAnimationBuilder<double>(
+                  key: ValueKey(AppColors.id),
                   tween: Tween(begin: 0, end: ratio),
                   duration: const Duration(milliseconds: 500),
                   builder: (c, v, _) => LinearProgressIndicator(

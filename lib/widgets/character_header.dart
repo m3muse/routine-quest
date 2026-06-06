@@ -149,6 +149,7 @@ class _ExpBar extends StatelessWidget {
           child: SizedBox(
             height: 10,
             child: TweenAnimationBuilder<double>(
+              key: ValueKey(AppColors.id),
               tween: Tween(begin: 0, end: progress),
               duration: const Duration(milliseconds: 700),
               curve: Curves.easeOutCubic,
