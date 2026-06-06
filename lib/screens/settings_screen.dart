@@ -463,7 +463,7 @@ class _TierRow extends StatelessWidget {
             ? tier.color.withValues(alpha: 0.18)
             : isReached
                 ? AppColors.success.withValues(alpha: 0.08)
-                : AppColors.background.withValues(alpha: 0.5),
+                : AppColors.subtle.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(12),
         border: isCurrent
             ? Border.all(color: tier.color, width: 2)
