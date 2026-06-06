@@ -287,15 +287,15 @@ class _WeeklyExpBar extends ConsumerWidget {
             const SizedBox(height: 8),
             ClipRRect(
               borderRadius: BorderRadius.circular(6),
-              child: TweenAnimationBuilder<double>(
-                key: ValueKey(AppColors.id),
-                tween: Tween(begin: 0, end: ratio),
-                duration: const Duration(milliseconds: 600),
-                builder: (c, v, _) => LinearProgressIndicator(
-                  value: v,
-                  minHeight: 10,
-                  backgroundColor: AppColors.primary.withValues(alpha: 0.18),
-                  valueColor: AlwaysStoppedAnimation<Color>(barColor),
+              child: ProgressIndicatorTheme(
+                data: ProgressIndicatorThemeData(
+                  color: barColor,
+                  linearTrackColor: AppColors.primary.withValues(alpha: 0.18),
+                ),
+                child: TweenAnimationBuilder<double>(
+                  tween: Tween(begin: 0, end: ratio),
+                  duration: const Duration(milliseconds: 600),
+                  builder: (c, v, _) => LinearProgressIndicator(value: v, minHeight: 10),
                 ),
               ),
             ),
@@ -394,15 +394,15 @@ class _DayOfYearCard extends StatelessWidget {
             const SizedBox(height: 8),
             ClipRRect(
               borderRadius: BorderRadius.circular(6),
-              child: TweenAnimationBuilder<double>(
-                key: ValueKey(AppColors.id),
-                tween: Tween(begin: 0, end: progress),
-                duration: const Duration(milliseconds: 600),
-                builder: (c, v, _) => LinearProgressIndicator(
-                  value: v,
-                  minHeight: 8,
-                  backgroundColor: AppColors.primary.withValues(alpha: 0.15),
-                  valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
+              child: ProgressIndicatorTheme(
+                data: ProgressIndicatorThemeData(
+                  color: AppColors.primary,
+                  linearTrackColor: AppColors.primary.withValues(alpha: 0.15),
+                ),
+                child: TweenAnimationBuilder<double>(
+                  tween: Tween(begin: 0, end: progress),
+                  duration: const Duration(milliseconds: 600),
+                  builder: (c, v, _) => LinearProgressIndicator(value: v, minHeight: 8),
                 ),
               ),
             ),

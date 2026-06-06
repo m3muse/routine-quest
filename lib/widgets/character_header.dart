@@ -148,15 +148,16 @@ class _ExpBar extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           child: SizedBox(
             height: 10,
-            child: TweenAnimationBuilder<double>(
-              key: ValueKey(AppColors.id),
-              tween: Tween(begin: 0, end: progress),
-              duration: const Duration(milliseconds: 700),
-              curve: Curves.easeOutCubic,
-              builder: (c, value, _) => LinearProgressIndicator(
-                value: value,
-                backgroundColor: Colors.white.withValues(alpha: 0.18),
-                valueColor: AlwaysStoppedAnimation<Color>(AppColors.primary),
+            child: ProgressIndicatorTheme(
+              data: ProgressIndicatorThemeData(
+                color: AppColors.primary,
+                linearTrackColor: Colors.white.withValues(alpha: 0.18),
+              ),
+              child: TweenAnimationBuilder<double>(
+                tween: Tween(begin: 0, end: progress),
+                duration: const Duration(milliseconds: 700),
+                curve: Curves.easeOutCubic,
+                builder: (c, value, _) => LinearProgressIndicator(value: value),
               ),
             ),
           ),

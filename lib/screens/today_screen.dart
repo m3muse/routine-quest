@@ -304,14 +304,15 @@ class _ProgressStrip extends StatelessWidget {
               borderRadius: BorderRadius.circular(6),
               child: SizedBox(
                 height: 10,
-                child: TweenAnimationBuilder<double>(
-                  key: ValueKey(AppColors.id),
-                  tween: Tween(begin: 0, end: ratio),
-                  duration: const Duration(milliseconds: 500),
-                  builder: (c, v, _) => LinearProgressIndicator(
-                    value: v,
-                    backgroundColor: AppColors.primary.withValues(alpha: 0.18),
-                    valueColor: AlwaysStoppedAnimation<Color>(barColor),
+                child: ProgressIndicatorTheme(
+                  data: ProgressIndicatorThemeData(
+                    color: barColor,
+                    linearTrackColor: AppColors.primary.withValues(alpha: 0.18),
+                  ),
+                  child: TweenAnimationBuilder<double>(
+                    tween: Tween(begin: 0, end: ratio),
+                    duration: const Duration(milliseconds: 500),
+                    builder: (c, v, _) => LinearProgressIndicator(value: v),
                   ),
                 ),
               ),
